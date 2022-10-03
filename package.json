@@ -1,0 +1,24 @@
+{
+  "name": "rollup-plugin-syntax-highlight",
+  "version": "0.1.0",
+  "description": "A Rollup plugin for syntax highlighting using Shiki",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "typings": "dist/index.d.ts",
+  "type": "module",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "rollup-plugin",
+    "shiki"
+  ],
+  "author": "Valter Kraemer",
+  "license": "MIT",
+  "types": "dist/index.d.ts"
+}
