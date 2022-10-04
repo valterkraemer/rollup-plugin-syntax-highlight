@@ -11,7 +11,9 @@ const outputs = [];
 async function testFixture(fixture) {
   const bundle = await rollup({
     input: resolve(`test/fixtures/${fixture}?syntax`),
-    plugins: [syntaxHighlight()],
+    plugins: [syntaxHighlight({
+      theme: "dark-plus"
+    })],
   });
 
   const { output } = await bundle.generate({

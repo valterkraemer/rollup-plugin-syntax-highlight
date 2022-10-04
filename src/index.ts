@@ -1,15 +1,14 @@
-import { getHighlighter } from "shiki";
+import { getHighlighter, HighlighterOptions } from "shiki";
 import { readFile } from "fs/promises";
 import type { Plugin } from "rollup";
 
-export type ExtensionLanguageMap = Record<string, string>;
+export type mapExtension = Record<string, string>;
 
-export type Options = {
-  theme?: string;
-  extensionLanguageMap: ExtensionLanguageMap;
+export type Options = HighlighterOptions & {
+  mapExtension: mapExtension;
 };
 
-const defaultExtensionLanguageMap: ExtensionLanguageMap = {
+const defaultMapExtension: mapExtension = {
   svg: "xml",
 };
 
@@ -39,13 +38,12 @@ type VitePlugin = Pick<Plugin, "name" | "resolveId" | "load"> & {
 };
 
 export function syntaxHighlight(options?: Options): VitePlugin {
-  const { theme, extensionLanguageMap } = {
-    theme: "dark-plus",
-    ...options,
-    extensionLanguageMap: {
-      ...defaultExtensionLanguageMap,
-      ...options?.extensionLanguageMap,
+  const { mapExtension, ...shikiOptions } = {
+    mapExtension: {
+      ...defaultMapExtension,
+      ...options?.mapExtension,
     },
+    ...options,
   };
 
   return {
@@ -98,11 +96,9 @@ export function syntaxHighlight(options?: Options): VitePlugin {
       }
 
       const extension = extensionMatch[1];
-      const language = extensionLanguageMap[extension] || extension;
+      const language = mapExtension[extension] || extension;
 
-      const highlighter = await getHighlighter({
-        theme,
-      });
+      const highlighter = await getHighlighter(shikiOptions);
 
       const code = highlighter.codeToHtml(content, { lang: language });
 
