@@ -49,6 +49,10 @@ test("svg", async () => {
   await testFixture("test.svg");
 });
 
+test("ts", async () => {
+  await testFixture("test.ts");
+});
+
 test.after(async () => {
   const texturesHtml = outputs
     .map(({ name, code }) => {
