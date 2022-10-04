@@ -34,7 +34,9 @@ function unWrapPath(path: string) {
   return path.slice(1, path.lastIndexOf(SYNTAX_EXTENSION));
 }
 
-type VitePlugin = Plugin & { enforce?: string };
+type VitePlugin = Pick<Plugin, "name" | "resolveId" | "load"> & {
+  enforce?: "pre" | "post";
+};
 
 export function syntaxHighlight(options?: Options): VitePlugin {
   const { theme, extensionLanguageMap } = {
