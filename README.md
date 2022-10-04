@@ -44,7 +44,7 @@ syntaxHighlight({
 });
 ```
 
-In addition, it supports the option `mapExtension`. I allows you to specify formatting for extensions Shiki doesn't recognise.
+In addition, it supports the option `mapExtension`. It allows you to specify formatting for extensions Shiki doesn't recognise.
 
 ```js
 syntaxHighlight({
