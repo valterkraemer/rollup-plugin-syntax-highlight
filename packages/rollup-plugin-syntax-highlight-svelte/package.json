@@ -1,0 +1,50 @@
+{
+  "name": "rollup-plugin-syntax-highlight-svelte",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/valterkraemer/rollup-plugin-syntax-highlight",
+    "directory": "packages/rollup-plugin-syntax-highlight-svelte"
+  },
+  "description": "A plugin for Vite and Rollup that creates Svelte components with highlighted code directly from files using Shiki",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "typings": "dist/index.d.ts",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "node test/test.js",
+    "build:test": "npm run build && npm run test"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "rollup-plugin",
+    "vite-plugin",
+    "svelte",
+    "shiki"
+  ],
+  "author": "Valter Kraemer",
+  "license": "MIT",
+  "dependencies": {
+    "magic-string": "^0.26.5",
+    "shiki": "^0.11.1"
+  },
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^14.1.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "svelte": "^3.50.1"
+  }
+}

@@ -1,0 +1,3 @@
+fn $[fnName]() {
+    println!("Hello!");
+}
