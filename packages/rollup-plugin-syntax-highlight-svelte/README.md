@@ -1,12 +1,12 @@
 # rollup-plugin-syntax-highlight-svelte
 
-Import code as syntax highlighted HTML using Rollup or Vite.
+Import code as syntax highlighted Svelte components using Rollup or Vite.
 
-Works like the [Special Assets](https://vitejs.dev/guide/features.html#static-assets) loaders in Vite. By appending `?syntax` to the import path, you will import the file's content as highlighted HTML code.
+Works like the [Special Assets](https://vitejs.dev/guide/features.html#static-assets) loaders in Vite. By appending `?syntax` to the import path, you will import a Svelte component with the highlighted HTML code. The component also support [substitutions](#substitutions)!
 
 Uses [Shiki](https://github.com/shikijs/shiki) for highlighting.
 
-![Highlighted code rendered](/assets/rendered.png)
+![code demo](./assets/demo.gif)
 
 ## Installation
 
@@ -26,12 +26,37 @@ export default {
 };
 ```
 
-You can now import HTML with the highlighted code by appending `?syntax` to the path.
+You can now import Svelte component with the highlighted code by appending `?syntax` to the path.
+
+```html
+<script>
+  import CodeSample from "./code-sample.ts?syntax";
+</script>
+
+<CodeSample />
+```
+
+## Substitutions
+
+By inserting `$[PROP_NAME]` into your highlightable code, you can substitute that with a value you pass into the component.
+
+```xml
+<svg viewBox="0 0 5 5">
+  <circle cx="2.5" cy="2.5" r="$[r]" />
+</svg>
+```
+
+```html
+<Component r="5" />
+```
+
+### Alias
+
+What you set as PROP_NAME will be used as the default value, and Shiki uses that to figure out how to highlight the code. Sometimes it will highlight things incorrecly. Then you can use the format `$[let:declaration]` to use `let` as default value, and `declaration` as prop name.
 
 ```js
-import codeHtml from "./code-sample.ts?syntax";
-
-export default `<html><body><h2>Code example</h2>${codeHtml}</body></html>`;
+declaration name; // $[declaration] name;
+let name; // $[let:declaration] name
 ```
 
 ## Options
@@ -53,3 +78,5 @@ syntaxHighlight({
   },
 });
 ```
+
+In Rollup you can use `ssr: true` to create ssr version. Vite should handle it automatically.

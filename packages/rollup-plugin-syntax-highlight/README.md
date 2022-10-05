@@ -6,7 +6,7 @@ Works like the [Special Assets](https://vitejs.dev/guide/features.html#static-as
 
 Uses [Shiki](https://github.com/shikijs/shiki) for highlighting.
 
-![Highlighted code rendered](/assets/rendered.png)
+![Highlighted code rendered](./assets/rendered.png)
 
 ## Installation
 
