@@ -1,0 +1,42 @@
+{
+  "name": "rollup-plugin-syntax-highlight",
+  "version": "0.1.4",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/valterkraemer/rollup-plugin-syntax-highlight",
+    "directory": "packages/rollup-plugin-syntax-highlight"
+  },
+  "description": "A plugin for Vite and Rollup that highlights code using Shiki",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "typings": "dist/index.d.ts",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "node test/test.js",
+    "build:test": "npm run build && npm run test"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "rollup-plugin",
+    "vite-plugin",
+    "shiki"
+  ],
+  "author": "Valter Kraemer",
+  "license": "MIT",
+  "dependencies": {
+    "shiki": "^0.11.1"
+  },
+  "types": "dist/index.d.ts"
+}

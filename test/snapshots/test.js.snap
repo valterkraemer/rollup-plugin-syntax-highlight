@@ -1,3 +1,0 @@
-var test_js = "<pre class=\"shiki\" style=\"background-color: #1E1E1E\"><code><span class=\"line\"><span style=\"color: #569CD6\">const</span><span style=\"color: #D4D4D4\"> </span><span style=\"color: #4FC1FF\">a</span><span style=\"color: #D4D4D4\"> = </span><span style=\"color: #CE9178\">&quot;Hello!&quot;</span><span style=\"color: #D4D4D4\">;</span></span></code></pre>";
-
-export { test_js as default };

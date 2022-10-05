@@ -1,3 +1,0 @@
-var test_css = "<pre class=\"shiki\" style=\"background-color: #1E1E1E\"><code><span class=\"line\"><span style=\"color: #D7BA7D\">.test</span><span style=\"color: #D4D4D4\"> {</span></span>\n<span class=\"line\"><span style=\"color: #D4D4D4\">  </span><span style=\"color: #9CDCFE\">background-color</span><span style=\"color: #D4D4D4\">: </span><span style=\"color: #CE9178\">red</span><span style=\"color: #D4D4D4\">;</span></span>\n<span class=\"line\"><span style=\"color: #D4D4D4\">}</span></span></code></pre>";
-
-export { test_css as default };
