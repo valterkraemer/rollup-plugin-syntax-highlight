@@ -1,6 +1,6 @@
 # rollup-plugin-syntax-highlight-svelte
 
-Import code as syntax highlighted Svelte components using Rollup or Vite.
+Import code as syntax highlighted Svelte components using Rollup or Vite. Code will be highlighted during build time.
 
 Works like the [Special Assets](https://vitejs.dev/guide/features.html#static-assets) loaders in Vite. By appending `?syntax` to the import path, you will import a Svelte component with the highlighted HTML code. The component also support [substitutions](#substitutions)!
 

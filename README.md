@@ -1,6 +1,6 @@
 # rollup-plugin-syntax-highlight
 
-Import code as syntax highlighted HTML using Rollup or Vite.
+Import code as syntax highlighted HTML using Rollup or Vite. Code will be highlighted during build time.
 
 [packages/rollup-plugin-syntax-highlight](packages/rollup-plugin-syntax-highlight) import code as syntax highlighted HTML.
 

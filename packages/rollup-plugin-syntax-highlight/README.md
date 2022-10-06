@@ -1,6 +1,6 @@
 # rollup-plugin-syntax-highlight
 
-Import code as syntax highlighted HTML using Rollup or Vite.
+Import code as syntax highlighted HTML using Rollup or Vite. Code will be highlighted during build time.
 
 Works like the [Special Assets](https://vitejs.dev/guide/features.html#static-assets) loaders in Vite. By appending `?syntax` to the import path, you will import the file's content as highlighted HTML code.
 
