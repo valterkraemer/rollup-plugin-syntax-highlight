@@ -10,7 +10,10 @@ const input = "src/index.ts";
  * @returns {import('rollup').RollupOptions}
  */
 export function createConfig(pkg) {
-  const external = Object.keys(pkg.dependencies || {}).concat(builtinModules);
+  const external = Object.keys(pkg.dependencies || {}).concat([
+    ...builtinModules,
+    "svelte/compiler",
+  ]);
 
   return [
     {
