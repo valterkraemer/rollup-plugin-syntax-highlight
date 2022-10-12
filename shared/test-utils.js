@@ -12,6 +12,7 @@ export async function fileSnapshot(name, content) {
   try {
     fileContent = await readFile(path, "utf-8");
     snapshot(content, fileContent);
+    return;
   } catch (err) {
     if (err.code !== "ENOENT") {
       throw err;
